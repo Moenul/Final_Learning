@@ -6,3 +6,30 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+#admin-page {
+
+    padding-top:0px !important;
+
+  }
+
+.navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+    display: block;
+}
+
+
+  #nested-comment{
+
+    margin-top:60px;
+
+
+  }
+
+  .comment-reply {
+
+    display: none;
+
+
+  }
