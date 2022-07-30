@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/admin', function(){
 
@@ -27,8 +27,14 @@ Route::get('/admin', function(){
 
 });
 
-Route::resource('/admin/users', AdminUsersController::class);
-Route::get('/admin/users/edit', 'AdminUsersController@edit')->name('admin.users.edit');
+Route::group(['middleware' => 'admin'], function(){
+
+    Route::resource('/admin/users', AdminUsersController::class);
+    // Route::get('/admin/users/edit', 'AdminUsersController@edit')->name('admin.users.edit');
+
+});
+
+
 
 // Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
 //     Route::resource('/admin/users', AdminUsersController::class);
