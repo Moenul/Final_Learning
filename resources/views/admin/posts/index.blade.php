@@ -30,7 +30,7 @@
                 <th scope="row">{{$post->id}}</th>
                 <td><img height="50px" src="{{ $post->photo ? $post->photo->file : '/images/DummyProfile.png' }}" alt="Empty"></td>
                 <td>{{$post->user->name}}</td>
-                <td>{{$post->category_id}}</td>
+                <td>{{$post->category ? $post->category->name : "Uncategorized"}}</td>
                 {{-- <td><a href="{{ route('users.edit', $user->id) }}">{{$user->name}}</a></td> --}}
                 <td>{{$post->title}}</td>
                 <td>{{$post->body}}</td>
