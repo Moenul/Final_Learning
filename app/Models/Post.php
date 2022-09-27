@@ -11,23 +11,23 @@ class Post extends Model
         'category_id',
         'photo_id',
         'title',
-        'body'
+        'body',
     ];
 
 
     public function user()
     {
-        return $this->belongsTO('App\Models\User');
+        return $this->belongsTo('App\Models\User');
     }
 
     public function photo()
     {
-        return $this->belongsTO('App\Models\Photo');
+        return $this->belongsTo('App\Models\Photo');
     }
 
     public function category()
     {
-        return $this->belongsTO('App\Models\Category');
+        return $this->belongsTo('App\Models\Category');
     }
 
     public function role()

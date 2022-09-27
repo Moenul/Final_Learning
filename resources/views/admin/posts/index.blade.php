@@ -31,9 +31,8 @@
                 <td><img height="50px" src="{{ $post->photo ? $post->photo->file : '/images/DummyProfile.png' }}" alt="Empty"></td>
                 <td>{{$post->user->name}}</td>
                 <td>{{$post->category ? $post->category->name : "Uncategorized"}}</td>
-                {{-- <td><a href="{{ route('users.edit', $user->id) }}">{{$user->name}}</a></td> --}}
-                <td>{{$post->title}}</td>
-                <td>{{$post->body}}</td>
+                <td><a href="{{ route('posts.edit', $post->id) }}">{{$post->title}}</a></td>
+                <td>{{ Str::limit($post->body, 15 )}}</td>
                 {{-- <td>{{$user->is_active == 1 ? 'Active' : 'Not Activate'}}</td> --}}
                 <td>{{$post->created_at->diffForHumans()}}</td>
                 <td>{{$post->updated_at->diffForHumans()}}</td>
