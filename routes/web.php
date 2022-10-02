@@ -32,6 +32,7 @@ Route::group(['middleware' => 'admin'], function(){
     Route::resource('/admin/users', AdminUsersController::class);
     Route::resource('/admin/posts', AdminPostsController::class);
     Route::resource('/admin/categories', AdminCategoriesController::class);
+    Route::resource('/admin/media', AdminMediasController::class);
     // Route::get('/admin/users/edit', 'AdminUsersController@edit')->name('admin.users.edit');
     // Route::get('/admin/posts/edit', 'AdminPostsController@edit')->name('admin.posts.edit');
 
