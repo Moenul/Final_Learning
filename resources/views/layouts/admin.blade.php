@@ -50,7 +50,6 @@
 
         <ul class="nav navbar-top-links navbar-right">
 
-
             <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -68,7 +67,11 @@
                 <!-- /.dropdown-user -->
             </li>
             <!-- /.dropdown -->
-
+{{-- <script>
+    $(".dropdown").click(function(){
+		$(".dropdown-menu").css("display", "block");
+	});
+</script> --}}
 
         </ul>
 
@@ -123,11 +126,11 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Users<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{ url('admin/users') }}">All Users</a>
+                                <a href="{{Route('admin.users.index')}}">All Users</a>
                             </li>
 
                             <li>
-                                <a href="{{ url('admin/users/create') }}">Create User</a>
+                                <a href="{{ Route('admin.users.create') }}">Create User</a>
                             </li>
 
                         </ul>
@@ -144,6 +147,10 @@
                             <li>
                                 <a href="{{ url('/admin/posts/create') }}">Create Post</a>
                             </li>
+                            <li>
+                                <a href="{{ url('/admin/comments') }}">All Comments</a>
+                            </li>
+
 
                         </ul>
                         <!-- /.nav-second-level -->

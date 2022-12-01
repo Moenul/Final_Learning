@@ -29,7 +29,7 @@
           <tr>
             <th scope="row">{{$user->id}}</th>
             <td><img height="50px" src="{{ $user->photo ? $user->photo->file : '/images/DummyProfile.png' }}" alt="Empty"></td>
-            <td><a href="{{ route('users.edit', $user->id) }}">{{$user->name}}</a></td>
+            <td><a href="{{ route('admin.users.edit', $user->id) }}">{{$user->name}}</a></td>
             <td>{{$user->email}}</td>
             <td>{{$user->role->name}}</td>
             <td>{{$user->is_active == 1 ? 'Active' : 'Not Activate'}}</td>

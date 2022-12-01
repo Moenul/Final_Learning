@@ -52,7 +52,7 @@ class User extends Authenticatable
 
     public function photo()
     {
-        return $this->belongsTO('App\Models\Photo');
+        return $this->belongsTo('App\Models\Photo');
     }
 
     public function isAdmin()
@@ -67,5 +67,11 @@ class User extends Authenticatable
     public function posts()
     {
         return $this->hasMany('App\Models\Post');
+    }
+
+    public function getGravatarAttribute()
+    {
+        $hash = md5(strtolower(trim($this->attributes['email']))) . "?d=mm&s=";
+        return "http://www.gravatar.com/avatar/$hash";
     }
 }

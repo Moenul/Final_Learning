@@ -14,7 +14,7 @@ class CreatePostsTable extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->unsignedBigInteger('user_id');
             $table->integer('category_id')->unsigned()->index();
             $table->integer('photo_id')->unsigned()->index();
@@ -30,11 +30,13 @@ class CreatePostsTable extends Migration
      *
      * @return void
      */
+
     public function down()
     {
-        Schema::dropIfExists('posts');
-            $table->dropForeign('lists_user_id_foreign');
-            $table->dropIndex('lists_user_id_index');
-            $table->dropColumn('user_id');
+        Schema::table('posts', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id');
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
     }
 }
